@@ -14,7 +14,8 @@
 
 [Swin-Transformer论文下载](https://arxiv.org/abs/2103.14030)
 
-![Swin-Transformer网络结构设计](./.github/pic/SwinTransformer.jpg)Swin-Transformer使用了层级式的骨干网络设计。从较小的Patch尺寸开始，每一阶段不断合并Patch，实现在不同阶段使用不同下采样率的特征图，从而可以输出多尺度的特征信息。
+<img src="./.github/pic/SwinTransformer.jpg" />
+Swin-Transformer使用了层级式的骨干网络设计。从较小的Patch尺寸开始，每一阶段不断合并Patch，实现在不同阶段使用不同下采样率的特征图，从而可以输出多尺度的特征信息。
 
 这种层级式获取多尺度特征的网络结构，使得对比ViT，SwinT更加适合于多种CV任务。借助于多尺度特征，网络能够更好地进行检测、分割等密集检测型的任务。
 
@@ -38,7 +39,7 @@ Swin-Transformer相关的模块实现代码位于models文件夹下的[是win tr
 
 ### 补丁嵌入
 
-![PatchEmbed](./.github/pic/PatchEmbed.jpg)
+<img src="./.github/pic/PatchEmbed.jpg" />
 
 该模块用于Backbone的最开始。在PatchEmbed部分，与ViT中的功能相同，用于将图像分成固定尺寸的Path，对每个Patch进行拉直与线性变换，得到后续输入向量。
 
@@ -75,7 +76,7 @@ Swin-Transformer相关的模块实现代码位于models文件夹下的[是win tr
 
 ### 斯文舞台
 
-![SwinStage](./.github/pic/SwinStage.jpg)
+<img src="./.github/pic/SwinStage.jpg" />
 
 Swin-Transformer模型的主体部分，已经集合了串联多个Swin-Transformer Block的功能。
 
@@ -138,7 +139,7 @@ Swin-Transformer模型的主体部分，已经集合了串联多个Swin-Transfor
 
 ### 补丁合并
 
-![PatchMerging](./.github/pic/PatchMerging.jpg)
+<img src="./.github/pic/PatchMerging.jpg" />
 
 Swin-Transformer模型各个Stage之间的部分，其实现类似于CNN中下采样的效果，特征图的宽高缩小一半，而通道数增加一倍。
 
