@@ -318,7 +318,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
         if m in {
                 Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,
                 PatchMerging, PatchEmbed,BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d,
-                C3x, SwinStage}:
+                C3x, SwinStage, CBAM}:
             c1, c2 = ch[f], args[0]
             if c2 != no:  # if not output
                 c2 = make_divisible(c2 * gw, 8)
@@ -360,7 +360,6 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    # parser.add_argument('--cfg', type=str, default='swinTransformer.yaml', help='model.yaml')
     parser.add_argument('--cfg', type=str, default='yolov5l.yaml', help='model.yaml')
     parser.add_argument('--batch-size', type=int, default=1, help='total batch size for all GPUs')
     parser.add_argument('--device', default='cpu', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
@@ -373,7 +372,6 @@ if __name__ == '__main__':
     device = select_device(opt.device)
 
     # Create model
-    # im = torch.rand(opt.batch_size, 3, 224, 224).to(device)
     im = torch.rand(opt.batch_size, 3, 640, 640).to(device)
     model = Model(opt.cfg).to(device)
 

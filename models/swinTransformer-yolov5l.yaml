@@ -1,8 +1,6 @@
-# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
-
 # Parameters
 nc: 80  # number of classes
-#ch: 1   # no. input channel
+#ch: 3   # no. input channel
 depth_multiple: 1.0  # model depth multiple
 width_multiple: 1.0  # layer channel multiple
 anchors:
@@ -10,7 +8,7 @@ anchors:
   - [30,61, 62,45, 59,119]  # P4/16
   - [116,90, 156,198, 373,326]  # P5/32
 
-# YOLOv5 v6.0 backbone
+# Swin-Transformer-Tiny backbone
 backbone:
   # [from, number, module, args]
   # input [b, 1, 640, 640]
